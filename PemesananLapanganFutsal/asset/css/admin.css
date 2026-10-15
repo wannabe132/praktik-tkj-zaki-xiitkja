@@ -1,0 +1,489 @@
+/* =========================
+   ROOT COLOR
+========================= */
+
+:root {
+
+    --primary: #ff7a00;
+
+    --dark: #111827;
+
+    --dark2: #1f2937;
+
+    --light: #f5f5f5;
+
+    --white: #ffffff;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    background: var(--light);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+
+    width: 250px;
+
+    height: 100vh;
+
+    background: var(--dark);
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    padding-top: 20px;
+
+    overflow-y: auto;
+}
+
+/* LOGO */
+
+.sidebar h2 {
+
+    color: var(--white);
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+    font-size: 28px;
+}
+
+/* MENU */
+
+.sidebar a {
+
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 15px 25px;
+
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+
+    background: var(--primary);
+}
+
+/* ACTIVE MENU */
+
+.sidebar .active {
+
+    background: var(--primary);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+
+    margin-left: 250px;
+
+    padding: 30px;
+
+    width: calc(100% - 250px);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+
+    margin-bottom: 20px;
+
+    color: var(--dark);
+}
+
+/* =========================
+   FORM
+========================= */
+
+input,
+textarea,
+select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    margin-bottom: 15px;
+}
+
+textarea {
+
+    resize: vertical;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button,
+.btn {
+
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: var(--primary);
+
+    color: white;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+button:hover,
+.btn:hover {
+
+    opacity: 0.9;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+
+    margin-top: 20px;
+}
+
+/* HEADER TABLE */
+
+table th {
+
+    background: var(--dark);
+
+    color: white;
+
+    padding: 15px;
+
+    text-align: center;
+}
+
+/* ISI TABLE */
+
+table td {
+
+    padding: 15px;
+
+    border-bottom: 1px solid #ddd;
+
+    text-align: center;
+
+    vertical-align: middle;
+}
+
+/* GAMBAR */
+
+table img {
+
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* STATUS */
+
+.status-menunggu {
+
+    color: orange;
+
+    font-weight: bold;
+}
+
+.status-disetujui {
+
+    color: green;
+
+    font-weight: bold;
+}
+
+.status-ditolak {
+
+    color: red;
+
+    font-weight: bold;
+}
+
+
+/* BUTTON EDIT */
+
+.btn-edit{
+
+    background: #3b82f6;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    margin-right: 5px;
+}
+
+/* BUTTON HAPUS */
+
+.btn-hapus{
+
+    background: crimson;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+/* AKSI */
+
+.aksi{
+
+   white-space: nowrap;
+}
+
+.aksi a{
+    text-decoration: none;
+}
+
+/* ICON */
+
+.icon-edit,
+.icon-delete{
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    color: white;
+
+    cursor: pointer;
+
+    margin: 0 3px;
+}
+
+.icon-edit{
+
+    background: #3b82f6;
+}
+
+.icon-delete{
+
+    background: crimson;
+}
+
+.icon-edit:hover,
+.icon-delete:hover{
+
+    transform: scale(1.08);
+}
+
+/* MODAL */
+
+.modal{
+
+    display: none;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content{
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    width: 400px;
+}
+
+.close{
+
+    float: right;
+
+    cursor: pointer;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   DASHBOARD CARD
+========================= */
+
+.dashboard-card{
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap: 20px;
+}
+
+.card{
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.card:hover{
+
+    transform: translateY(-5px);
+}
+
+.card h3{
+
+    color: #666;
+
+    margin-bottom: 10px;
+}
+
+.card p{
+
+    font-size: 35px;
+
+    font-weight: bold;
+
+    color: var(--primary);
+}
+
+
+/* =========================
+   FILTER FORM
+========================= */
+
+.filter-form{
+
+    display: flex;
+
+    gap: 15px;
+
+    margin: 20px 0;
+
+    flex-wrap: wrap;
+}
+
+.filter-form input,
+.filter-form select{
+
+    padding: 12px 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid #ccc;
+
+    outline: none;
+
+    min-width: 220px;
+}
+
+.filter-form button{
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #ff7a00,
+        #ff5500
+    );
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.filter-form button:hover{
+
+    opacity: 0.9;
+}

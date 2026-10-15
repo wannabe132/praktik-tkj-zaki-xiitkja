@@ -1,0 +1,23 @@
+<?php
+require_once("../../config/koneksi.php");
+
+$id = $_GET['id'];
+
+mysqli_query($koneksi, "
+
+UPDATE ttransaksi
+
+SET Status_pembayaran='ditolak'
+
+WHERE Id_transaksi='$id'
+
+");
+
+echo "<script>
+
+alert('Pembayaran ditolak!');
+
+window.location.href='../Pembayaran_admin.php';
+
+</script>";
+?>
