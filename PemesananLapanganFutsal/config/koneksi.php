@@ -1,14 +1,11 @@
-<?php 
-
-$host     = "localhost";
-$username = "root";
-$password = "";
-$database = "db_pemesananlapanganfutsal";
+<?php
+$host     = getenv('DB_HOST') ?: "localhost";
+$username = getenv('DB_USER') ?: "root";
+$password = getenv('DB_PASS') ?: "";
+$database = getenv('DB_NAME') ?: "db_pemesananlapanganfutsal";
 
 $koneksi = new mysqli($host, $username, $password, $database);
-if (!$koneksi) {
-        die("Gagal terhubung ke database". mysqli_connect_error());
-    }
 
-
-?>
+if ($koneksi->connect_error) {
+    die("Gagal terhubung ke database". mysqli_connect_error());
+}

@@ -1,0 +1,37 @@
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    environment:
+      DB_HOST: db
+      DB_USER: futsal_user
+      DB_PASS: futsal_pass123
+      DB_NAME: db_pemesananlapanganfutsal
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: mariadb:10.11
+    environment:
+      MARIADB_ROOT_PASSWORD: root_pass123
+      MARIADB_DATABASE: db_pemesananlapanganfutsal
+      MARIADB_USER: futsal_user
+      MARIADB_PASSWORD: futsal_pass123
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db_pemesananlapanganfutsal.sql:/docker-entrypoint-initdb.d/db_pemesananlapanganfutsal.sql
+    restart: unless-stopped
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    environment:
+      PMA_HOST: db
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
